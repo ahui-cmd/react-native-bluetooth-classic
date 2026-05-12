@@ -1,5 +1,5 @@
 {
-  "name": "react-native-bluetooth-classic",
+  "name": "@react-native-ohos/react-native-bluetooth-classic",
   "version": "1.73.0-rc.17",
   "description": "Implement bluetooth classic (serial) on Android (Bluetooth Adapter) and IOS (External Accessory)",
   "main": "lib/index.js",
@@ -19,7 +19,8 @@
     "postversion": "git push && git push --tags",
     "publish-npm": "npm publish",
     "prettier:write": "prettier --write -c '**/*.{ts,tsx}'",
-    "prettier:check": "prettier --check -c '**/*.{ts,tsx}'"
+    "prettier:check": "prettier --check -c '**/*.{ts,tsx}'",
+    "codegen-lib": "react-native codegen-lib-harmony --no-safety-check --npm-package-name react-native-bluetooth-classic --cpp-output-path ./harmony/cpp/generated --ets-output-path ./harmony/ets/generated --turbo-modules-spec-paths ./NativeBluetoothClassic.ts"
   },
   "repository": "git://github.com/kenjdavidson/react-native-bluetooth-classic.git",
   "keywords": [
@@ -28,8 +29,18 @@
     "Bluetooth Adapter",
     "Android",
     "External Accessory",
-    "IOS"
+    "IOS",
+    "harmony"
   ],
+  "harmony": {
+    "alias": "react-native-bluetooth-classic",
+    "autolinking": {
+      "etsPackageClassName": "BluetoothClassicPackage",
+      "cppPackageClassName": "BluetoothClassicPackage",
+      "cmakeLibraryTargetName": "rn_bluetooth_classic",
+      "ohPackageName": "@react-native-ohos/react-native-bluetooth-classic"
+    }
+  },
   "author": "Kenneth Davidson <ken.j.davidson@live.ca> (https://github.com/kenjdavidson)",
   "contributors": [
     "Jakub Martyčák <martycakjakub@gmail.com> (https://github.com/rusel1989)",
@@ -51,14 +62,19 @@
     "react-native": ">=0.73.1"
   },
   "dependencies": {
-    "buffer": "^6.0.3"
+    "buffer": "^6.0.3",
+    "react-native-bluetooth-classic": "1.73.0-rc.17"
   },
   "files": [
     "lib",
     "android",
     "ios",
+    "harmony",
+    "src",
     "react-native-bluetooth-classic.podspec",
-    "react-native.config.js"
+    "react-native.config.js",
+    "harmony/rn_bluetooth_classic.har",
+    "harmony/rn_bluetooth_classic"
   ],
   "devDependencies": {
     "@react-native/typescript-config": "^0.74.0",
@@ -75,6 +91,8 @@
     "ts-auto-mock": "^3.7.2",
     "ts-jest": "^29.1.2",
     "ttypescript": "^1.5.12",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "react-native-harmony-cli": "npm:@react-native-oh/react-native-harmony-cli@^0.0.27",
+    "@react-native-community/cli": "11.4.1"
   }
 }

@@ -1,0 +1,7 @@
+{
+  module: {
+    name: 'rn_bluetooth_classic',
+    type: 'har',
+    deviceTypes: ['default']
+  },
+}
