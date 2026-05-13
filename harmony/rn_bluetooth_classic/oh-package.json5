@@ -1,0 +1,12 @@
+{
+  license: 'MIT',
+  types: '',
+  name: '@react-native-ohos/react-native-bluetooth-classic',
+  description: '',
+  main: 'Index.ets',
+  type: 'module',
+  version: '1.74.0-rc.1',
+  dependencies: {
+    "@rnoh/react-native-openharmony": "file:../../node_modules/@react-native-oh/react-native-harmony/harmony/react_native_openharmony.har"
+  },
+}

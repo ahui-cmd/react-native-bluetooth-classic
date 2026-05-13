@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-bluetooth-classic",
+        "License": "MIT License",
+        "License File": "https://github.com/kenjdavidson/react-native-bluetooth-classic/blob/master/LICENSE",
+        "Version Number": "1.73.0-rc.17",
+        "Owner" : "panjinling@huawei.com",
+        "Upstream URL": "https://github.com/kenjdavidson/react-native-bluetooth-classic",
+        "Description": "Implement bluetooth classic (serial)."
+    }
+]
